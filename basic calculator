@@ -1,0 +1,57 @@
+def Addition(nums):
+	result= sum(nums)
+	return result
+
+
+def Subtraction(nums):
+	result= nums[0]
+	for nums in nums[1:]:
+		result -= nums
+		return result
+
+
+def Division(nums):
+	result=nums[0]
+	for nums in nums[1:]:
+		if nums == 0:
+			return "Error: Division by zero"
+		else:
+			result /= nums
+		return result
+
+
+def Multiplication(nums):
+	result=nums[0]
+	for nums in nums[1:]:
+		result *= nums
+	return result
+
+
+def show_menu():
+	print("These are the operations available: \n")
+	print("1.Addition\n")
+	print("2.Subtraction\n")
+	print("3.Division\n")
+	print("4.Multiplication")
+
+
+def main():
+	show_menu()
+	nums=list(map(int, input("Enter numbers separated by space: ").split()))
+	choice = int(input("enter you choice from(1-4) "))
+	if choice == 1:
+		add = Addition(nums)
+		print(add)
+	elif choice == 2:
+		sub = Subtraction(nums)
+		print(sub)
+	elif choice == 3:
+		div = Division(nums)
+		print(div)
+	elif choice == 4:
+		mul = Multiplication(nums)
+		print(mul)
+	else:
+		print("Invalid choice")
+if __name__ == "__main__":
+	main()
